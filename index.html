@@ -4,106 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sinar Sumber Rezeki</title>
-    <link rel="icon" type="jpg" 
-    href="logo4.jpg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
     <script src="https://kit.fontawesome.com/02138bd525.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="header-content">
             <img src="logo4.jpg" alt="Logo SSR" class="logo">
             <h1>SINAR SUMBER REZEKI</h1>
         </div>
-    </header>
-
-    <main>
-        
-        <section class="home">
-            <div class="container">
-                <div class="card">
-                    <h2>ATAP ASPAL BITUMEN</h2>
-                    <img src="ATAP BITUMEN.jpg" alt="Atap Aspal Bitumen">
-                    <a href="produk atap bitumen.html">Detail Produk</a>
-                </div>
-                <div class="card">
-                    <h2>SPC FLOORING</h2>
-                    <img src="flooring.jpg" alt="SPC Flooring">
-                    <a href="produk floring.html">Detail Produk</a>
-                </div>
-                <div class="card">
-                    <h2>RANGKA ATAP BAJA RINGAN</h2>
-                    <img src="angka baja.jpg" alt="Rangka Atap Baja Ringan">
-                    <a href="produks rangka besi.html">Detail Produk</a>
-                </div>
-            </div>  
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Kolom 1: Logo & Deskripsi -->
-            <div class="footer-section">
-                <h2 class="footer-logo">sinarsumberrezeki</h2>
-                <p class="footer-text">
-                    PT Sinar Sumber Rezeki (SSR) adalah perusahaan
-konstruksi yang berdiri dari tahun 2022, yang didorong
-oleh komitmen untuk membangun rumah impian anda di
-Bali dan Lombok, kami adalah perusahaan konstruksi
-yang berkembang pesat!
-SSR juga support untuk finishing project Atap Bitumen,
-SPC Flooring, Landscape, Plafond, Partition dengan
-spesifikasi high end untuk kepuasan pelanggan.
-                </p>
-            
-            </div>
-
-            <!-- Kolom 2: Perusahaan -->
-            <div class="footer-section">
-                <h4 class="footer-title">Perusahaan</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Tentang Kami</a></li>
-                    <li><a href="#">Produk & Layanan</a></li>
-                    <li><a href="#">Partner</a></li>
-                    <li><a href="#">Karir</a></li>
-                    <li><a href="#">Pressroom</a></li>
-                </ul>
-            </div>
-
-            <!-- Kolom 3: Layanan -->
-            <div class="footer-section">
-                <h4 class="footer-title">Layanan</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Iklankan Properti</a></li>
-           
-                </ul>
-            </div>
-
-            <!-- Kolom 4: Dukungan -->
-            <div class="footer-section">
-                <h4 class="footer-title">Dukungan</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Kebijakan Privasi</a></li>
-                    <li><a href="#">Syarat Penggunaan</a></li>
-                    <li><a href="#">Syarat Penggunaan Agen</a></li>
-                </ul>
-            </div>
-
-            <!-- Kolom 5: Hubungi Kami & Sosial Media -->
-            <div class="footer-section">
-                <h4 class="footer-title">Hubungi Kami</h4>
-                <p class="footer-text">
-                    <a href="mailto:sinarsumberrezeki@gmail.com">sinarsumberrezeki@gmail.com</a><br>
-                    +62 821-4616-9266
-                </p>
-                <h4 class="footer-title">Ikuti Kami</h4>
-                <div class="footer-icons">
-                    <a href="https://www.facebook.com/profile.php?id=100086591586130" class="icon"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/sinarsumberrezeki_/?next=%2Fsinarsumberrezeki_%2F" class="icon"><i class="fab fa-instagram"></i></a>
-                    <a href="tiktok.com/@sinarsumberrezeki3" class="icon"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
+        <div class="cart" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart cart-icon"></i>
+            <span class="cart-count">0</span>
         </div>
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Selamat Datang <span>di Website Kami</span></h1>
+            <p>Temukan berbagai produk terbaik dengan penawaran menarik. Yuk, mulai belanja sekarang!</p>
+            <a href="index.html">Lihat Produk</a>
+            <a href="about.html">about</a>
 
-        
+        </div>
+        <div class="hero-image">
+            <img src="bg web 3.jpeg" alt="Gambar Hero">
+        </div>
+    </section>
+     <!-- Popup untuk menampilkan isi keranjang -->
+     <div class="cart-popup" id="cart-popup">
+        <h3>Keranjang Belanja</h3>
+        <div class="cart-items"></div>
+       
+    </div>
+    
 </body>
-</html>
