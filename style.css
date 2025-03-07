@@ -1,0 +1,192 @@
+*
+
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 60px; /* Sesuaikan ukuran logo */
+}
+
+h1 {
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 15px;
+    width: 300px;
+}
+
+ .card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: black;
+}
+
+.card a {
+    display: block;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white; /* Warna teks putih */
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+
+.card a:hover {
+    background-color: #0056b3;
+}
+
+.description {
+  color: rgb(0, 0, 0);
+  width: 100%; /* Atur lebar sesuai kebutuhan */
+  height: 200px; /* Tinggi yang diinginkan, sesuaikan dengan desain */
+  overflow-y: auto; /* Scroll vertikal jika konten melebihi ukuran */
+  border: 1px solid #ffffff; /* Menambahkan border agar elemen lebih terlihat */
+  padding: 10px; /* Menambahkan ruang di dalam elemen */
+  background-color: #f9f9f9; /* Warna latar belakang */}
+   
+  .home {
+    background-image: url('kbg.jpeg'); /* Ganti dengan gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+  }
+
+  /* Footer */
+.footer {
+  background-color: #06152B;
+  color: white;
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.footer-section {
+  width: 20%;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+  width: 200px;
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Ikon */
+.footer-icons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.icon:hover {
+  color: #ccc;
+}
+
+/* Garis pembatas */
+.footer-divider {
+  border: 0;
+  height: 1px;
+  background: #444;
+  margin: 20px auto;
+  width: 90%;
+}
+
+/* Copyright */
+.footer-copyright {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+}

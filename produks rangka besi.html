@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinar Sumber Rezeki</title>
+    <link rel="stylesheet" href="produks.css">
+    <script src="https://kit.fontawesome.com/02138bd525.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <img src="logo4.jpg" alt="Logo SSR" class="logo">
+            <h1>SINAR SUMBER REZEKI</h1>
+        </div>
+        <div class="cart" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart cart-icon"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+     <!-- Popup untuk menampilkan isi keranjang -->
+     <div class="cart-popup" id="cart-popup">
+        <h3>Keranjang Belanja</h3>
+        <div class="cart-items"></div>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+
+    <h2>Produk </h2>
+
+    <!-- Daftar Produk -->
+    <div class="product-container">
+        <div class="product-card">
+            <img src="baja ringan.jpeg" alt="Produk 1">
+            <h3 class="product-name">Nama Produk 1</h3>
+            <p class="product-description">Produk berkualitas tinggi dengan bahan premium.</p>
+            <p class="product-price">Rp 150.000</p>
+            <ul class="modal-product-details">
+                <li><strong>Material:</strong> Katun Premium</li>
+                <li><strong>Warna:</strong> Hitam, Putih, Biru</li>
+                <li><strong>Ukuran:</strong> S, M, L, XL</li>
+                <li><strong>Stok:</strong> Tersedia</li>
+            </ul>
+            <label for="brand">Pilih Merk:</label>
+            <select id="brand" class="modal-brand" onchange="updatePrice(this)">
+                <option value="150000">Brand A - Rp 150.000</option>
+                <option value="175000">Brand B - Rp 175.000</option>
+                <option value="200000">Brand C - Rp 200.000</option>
+                <option value="200000">Brand D - Rp 200.000</option>
+            </select>
+            <p class="modal-product-price" id="productPrice">Rp 150.000</p>
+            <button class="buy-button" onclick="addToCart(this)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+        </div>
+        <script>
+            function showDetail() {
+                document.getElementById("productModal").style.display = "flex";
+            }
+            
+            function closeDetail() {
+                document.getElementById("productModal").style.display = "none";
+            }
+        </script>
+        
+        <script>
+         function updatePrice(selectElement) {
+    let selectedPrice = selectElement.value;
+    let productCard = selectElement.closest(".product-card");
+    let priceDisplay = productCard.querySelector(".modal-product-price");
+    priceDisplay.textContent = "Rp " + parseInt(selectedPrice).toLocaleString("id-ID");
+}
+
+            </script>
+    <script>
+    let cart = [];
+const whatsappNumber = "6282146169266"; // Ganti dengan nomor WhatsApp tujuan
+
+function addToCart(button) {
+    let productCard = button.closest(".product-card");
+    let productName = productCard.querySelector(".product-name").textContent;
+    let productPrice = productCard.querySelector(".modal-product-price").textContent;
+    
+    let item = { name: productName, price: productPrice };
+    cart.push(item);
+    updateCart();
+}
+
+function updateCart() {
+    const cartCount = document.querySelector(".cart-count");
+    const cartItems = document.querySelector(".cart-items");
+
+    cartCount.textContent = cart.length;
+    cartItems.innerHTML = '';
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<p class="empty-cart">Keranjang kosong</p>';
+    } else {
+        cart.forEach((item, index) => {
+            cartItems.innerHTML += `
+                <div class="cart-item">
+                    ${item.name} - ${item.price} 
+                    <button onclick="removeFromCart(${index})">❌</button>
+                </div>`;
+        });
+    }
+}
+
+function addToCartSimple(name, price) {
+    cart.push({ name, price });
+
+    alert(`${name} berhasil ditambahkan ke keranjang dengan harga Rp ${new Intl.NumberFormat("id-ID").format(price)}`);
+    
+    updateCart();
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function toggleCart() {
+    const cartPopup = document.getElementById('cart-popup');
+    cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert("Keranjang masih kosong!");
+    } else {
+        let message = "Halo, saya ingin membeli:\n";
+        cart.forEach((item, index) => {
+            message += `${index + 1}. ${item.name} - ${item.price}\n`;
+        });
+
+        let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, "_blank");
+    }
+}
+
+
+    </script>
+
+</body>
